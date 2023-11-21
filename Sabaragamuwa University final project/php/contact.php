@@ -1,0 +1,237 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Happy Tails</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="./../css/main.css">
+</head>
+
+<body>
+
+    <?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "happytail";
+
+    // Create connection
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    // Check connection
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
+
+    $sql = "INSERT INTO contact_us (name, email, subject, message)
+VALUES ('$name', '$email', '$subject','$message')";
+
+    if (mysqli_query($conn, $sql)) {
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
+
+    mysqli_close($conn);
+    ?>
+
+
+    <div class="wrapper">
+        <div class="top-bar clearfix">
+            <div class="top-bar-links">
+                <ul>
+                    <li><a href="./../signUp.html">Sign up</a></li>
+                    <li><a href="./../login.html">Log in</a></li>
+                    <li><a href="https://companyofhappytails.blogspot.com/">Archived News</a></li>
+                </ul>
+            </div>
+            <! -- top-bar-links -->
+
+                <div class="site-search">
+                    <form method="get" action="Index.html">
+                        <input type="search" name="search - box">
+                        <button type="submit"></button>
+                    </form>
+                </div>
+                <! --site search -->
+        </div>
+        <! --top-bar -->
+
+            <header class="clearfix">
+                <div class="logo">
+                    <h1>Happy Tail</h1>
+                    <p>Dog care center</p>
+
+                </div>
+                <! --logo -->
+                    <div class="socialmedia">
+                        <ul>
+                            <li><a href="https://lk.linkedin.com/"><i class="fa-brands fa-linkedin fa-fw"></i></a></li>
+                            <li><a href="https://ads.google.com/intl/en_lk/getstarted/?subid=lk-en-ha-awa-bk-a-bb0!o3~CjwKCAiAqt-dBhBcEiwATw-ggM6llDHLg5oh_Oiov5j6KIAtwmrekkn8SednZogcw-j7KUN7tBl2lRoC9w0QAvD_BwE~150980607824~kwd-388814528557~19141196637~639362040895&gclid=CjwKCAiAqt-dBhBcEiwATw-ggM6llDHLg5oh_Oiov5j6KIAtwmrekkn8SednZogcw-j7KUN7tBl2lRoC9w0QAvD_BwE&gclsrc=aw.ds"><i class="fa-brands fa-google-plus"></i></a></li>
+                            <li><a href="https://help.instagram.com/155940534568753"><i class="fa-brands fa-instagram fa-fw"></i></a></li>
+                            <li><a href="https://en-gb.facebook.com/help/104002523024878"><i class="fa-brands fa-facebook fa-fw"></i></a></li>
+                            <li><a href="https://www.pinterest.com/login/"><i class="fa-brands fa-pinterest fa-fw"></i></a></li>
+                            <li><a href="https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoiZW4ifQ%3D%3D%22%7D"><i class="fa-brands fa-twitter fa-fw"></i></a></li>
+                        </ul>
+
+                    </div><!-- socialmedia -->
+            </header>
+            <nav>
+                <ul>
+                    <li><a href="./../Index.html">Home</a></li>
+                    <li><a href="./../about.html">About Us</a></li>
+                    <li><a href="./../service.html">Services</a></li>
+                    <li><a href="./../blog.html">Bloge</a></li>
+                    <li><a href="./../contact.html">Contact Us</a></li>
+
+                </ul>
+            </nav>
+            <div class="wrapper3">
+                <h1>Contact Us</h1>
+                <div class="contact-info clearfix">
+                    <div class="card">
+                        <i class="card-icon far fa-solid fa-envelope"></i>
+                        <p>HappyTail@gmail.com</p>
+                    </div>
+
+
+                    <div class="card">
+
+                        <i class="card-icon far fa-solid fa-phone"></i>
+                        <p>+94 76 470 5801</p>
+
+                    </div>
+
+                    <div class="card">
+                        <i class="card-icon far fa-solid fa-location-dot"></i>
+                        <p>Sri Lankan</p>
+
+                    </div>
+                </div>
+                <section id="section-wrapper">
+                    <div class="box-wrapper">
+                        <div class="info-wrap">
+                            <h2 class="info-title">Contact Information</h2>
+                            <h3 class="info-sub-title">Fill up the form and our Team will get back to you within 24 hours.</h3>
+                            <ul class="info-details">
+                                <li>
+                                    <i class="fa-solid fa-phone"></i>
+                                    <span>Phone:</span><a href="tel:+94 76 470 5801">+94 76 470 5801</a>
+                                </li>
+
+                                <li>
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <span>Email:</span><a href="mailto:HappyTail@gmail.com">HappyTail@gmail.com</a>
+                                </li>
+
+                                <li>
+                                    <i class="fa-solid fa-globe"></i>
+                                    <span>Website:</span><a href="https//HappyTail.com">https//HappyTail.com</a>
+                                </li>
+                            </ul>
+                            <ul class="social-icons">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa-brands fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa-brands fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa-brands fa-linkedin-in"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="form-wrap">
+
+
+                            <div class="form-fields" style="height:580px">
+                                <h2>Thank you for contacting us</h2>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+                <footer>
+					<div class="footercol">
+					<h4>Latest Tweets</h4>
+						<div class="tweet">
+						<p>
+							<a href="https://www.buzzfeed.com/animals">Syd Robinson</a>
+							15 Animal Tweets That I Hold Near And Dear To My Heart, And I Think You Will Too.<br> Posted on Sep 23, 2021. 
+						</p>
+						</div><! -- tweet -- >
+						
+						<div class="tweet">
+						<p>
+							<a href="https://www.buzzfeed.com/sydrobinson1/cat-and-dog-tweets">@JackCooper92</a>
+							This week, this BIG BOYE met this smallini bobini!!!<br> Posted on Sep 18, 2021. 
+						</p>
+						</div><! -- tweet -- >
+						
+					</div><! -- footercol -->
+					
+					<div class="footercol">
+					<h4>Quick Links</h4>
+						<ul class="quicklinks">
+							<li><a href="Index.html">Home</a></li>
+							<li><a href="about.html">About Us</a></li>
+							<li><a href="service.html">Services</a></li>
+							<li><a href="blog.html">Bloge</a></li>
+							<li><a href="contact.html">Contact Us</a></li>
+						</ul>
+					</div><! -- footercol -->
+					
+					<div class="footercol">
+					<h4>Latest Blog Posts</h4>
+						
+						<div class="blogpost">
+							<h5>How to wash your Dog?</h5>
+							<div class="postinfo">
+								<a href="https://dogcarecenter2022.blogspot.com/">Admin</a>
+								HappyTail.com<br>
+								Sunday,28 December 2022
+							</div>
+							<p>A little water, a little shampoo... how hard is it to bathe a dog? Sometimes, it's harder than you think...</p>
+							<a href="https://dogcarecenter2022.blogspot.com/" class="readmore">Read more &raquo;</a>
+						</div>
+						
+						<div class="blogpost">
+							<h5>How to Feed Your DOG?</h5>
+							<div class="postinfo">
+								<a href="https://happytailpuppy.blogspot.com">Admin</a>
+								HappyTail.com<br>
+								Sunday,28 December 2022
+							</div>
+							<p>As a general rule of thumb, Waxman says small and medium-sized breeds can be switched to adult food... </p>
+							<a href="https://happytailpuppy.blogspot.com" class="readmore">Read more &raquo;</a>
+						</div>
+						
+					
+				</footer>
+                <div class="copyrights">
+                    <div class="left">
+                        Copyrights &copy; Domain Name. All Rights Reserved
+                    </div>
+
+                    <div class="right">
+                        Website by: UGT Dhalanjala
+                    </div>
+                </div>
+                <! -- copyrights -->
+
+            </div>
+            <! -- weapper -->
+    </div>
+</body>
+
+</html>
